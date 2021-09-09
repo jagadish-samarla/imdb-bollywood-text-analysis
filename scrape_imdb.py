@@ -3,7 +3,7 @@ import time
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 
-df = pd.read_excel("sample_output.xlsx", header=0)
+df = pd.read_excel("cleaned_bollywoodlist.xlsx", header=0)
 
 movie_list = df['Movie Title'].to_numpy()
 
@@ -13,7 +13,7 @@ driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.maximize_window()
 driver.implicitly_wait(3)
 count = 0
-start = 851
+start = 0
 
 title_list = []
 genre_list = []
@@ -36,8 +36,7 @@ try:
             driver.find_element_by_xpath("//a[contains(@href, 'https://www.imdb.com/')]").click()
             url_list.append(driver.current_url)
             driver.implicitly_wait(3)
-            cast_link_node = driver.find_element_by_xpath(
-                "//section[@data-testid='title-cast']/ul/li[3]/a[contains(text(),'All cast & crew')]")
+            cast_link_node = driver.find_element_by_xpath("//a[contains(text(),'All cast & crew')]")
             cast_link = cast_link_node.get_attribute('href')
             summary_link_node = driver.find_element_by_xpath("//a[contains(text(),'Plot summary')]")
             summary_link = summary_link_node.get_attribute('href')
@@ -50,6 +49,9 @@ try:
             for i in genres:
                 genre_list_particular_movie.append(i.text)
             genre_list.append(genre_list_particular_movie)
+            release_date = driver.find_element_by_xpath("//section[@data-testid='Details']/div/ul/li/div/ul/li/a")
+            release_dates.append(release_date.text)
+            #print(release_date.text)
             driver.get(cast_link)
             driver.implicitly_wait(5)
             #cast_element = WebDriverWait(driver, 5).until(EC.visibility_of_all_elements_located((By.XPATH, "//div[@id='fullcredits_content']//table[@class='cast_list']/tbody/tr/td[2]/a")))
@@ -84,7 +86,8 @@ try:
         except Exception as e:
             print(e)
             df_temp = pd.DataFrame()
-            df_temp['Title'] = pd.Series(title_list, dtype=str).to_frame()
+            #df_temp['Movie Title'] = df['Movie Title']
+            df_temp['IMDB Title'] = pd.Series(title_list, dtype=str).to_frame()
             df_temp['url'] = pd.Series(url_list, dtype=str).to_frame()
             df_temp['Genre'] = pd.Series(genre_list, dtype=str).to_frame()
             df_temp['Cast'] = pd.Series(cast_list, dtype=str).to_frame()
@@ -102,7 +105,7 @@ try:
             imdb_ratings_list = []
             url_list = []
             count = 0
-            if exception_count > 15:
+            if exception_count > 200:
                 break
             exception_count += 1
 except Exception as e:
