@@ -12,12 +12,12 @@ After performing web scraping all the output files uploaded manually to the goog
 
 
 # Naming Convention:
-## Bollywood Movies Datases.xlsx - ### Given excel file that contained raw movie titles.
-## cleaned_bollywoodlist.xlsx - ### An excel file with cleaned movie titles (by removing special characters and punctuations)
-## complete_database (1).xlsx - ### Final database file with all the required attributes
-## Final_textAnalysis.csv - ### A csv file that contains with all text analysis attributes
-## top_10_actors.csv - ### A csv file that contains top 10 most acted actors from the data.
-## Genre_distribution_of_titles - ### A csv file that contains exploratory analysis of 'Genre distribution of titles'
-## scrape_imdb.py - ### Python script to perform python selenium web scraping
-## IMDB_text_analysis.ipynb - ### Python notebook to perform text analysis and exploratory data analysis. 
+### Bollywood Movies Datases.xlsx -  Given excel file that contained raw movie titles.
+### cleaned_bollywoodlist.xlsx -  An excel file with cleaned movie titles (by removing special characters and punctuations)
+### complete_database (1).xlsx -  Final database file with all the required attributes
+### Final_textAnalysis.csv -  A csv file that contains with all text analysis attributes
+### top_10_actors.csv -  A csv file that contains top 10 most acted actors from the data.
+### Genre_distribution_of_titles -  A csv file that contains exploratory analysis of 'Genre distribution of titles'
+### scrape_imdb.py -  Python script to perform python selenium web scraping
+### IMDB_text_analysis.ipynb -  Python notebook to perform text analysis and exploratory data analysis. 
 
