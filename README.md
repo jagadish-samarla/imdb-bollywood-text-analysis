@@ -1,14 +1,14 @@
 # IMDB Bollywood Text Analysis
 
 # what is this for?
-This particualr source code takes movie titles and performs web scraping using python-selenium extracts all the required data from the IMDB website.
+This project takes movie titles and performs web scraping using python-selenium extracts all the required data from the IMDB website.
 After scraping data from website, Text analysis and exploratory data analysis are performed on that extracted data.
 
 
 # Steps to follow:
-Raw movie titles 'Bollywood Movies Dataset.xlsx' is cleaned as 'cleaned_bollywoodlist.xlsx' by using first 9 lines of code in 'IMDB_text_analysis.ipynb'.
+Raw movie titles 'Bollywood Movies Dataset.xlsx' is cleaned as 'cleaned_bollywoodlist.xlsx' by running first 9 lines of code in 'IMDB_text_analysis.ipynb'.
 'cleaned_bollywoodlist.xlsx' file must be downloaded and added to the local repository to perform web scraping using selenium.
-After performing web scraping all the output files uploaded manually to the google drive to perform furhter text analysis and exploratory data analysis.
+After performing web scraping all the output files uploaded manually to the google drive to perform further text analysis and exploratory data analysis on google collab.
 
 
 # Naming Convention:
