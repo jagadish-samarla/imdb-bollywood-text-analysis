@@ -7,7 +7,9 @@ After scraping data from website, Text analysis and exploratory data analysis ar
 
 # Steps to follow:
 Raw movie titles 'Bollywood Movies Dataset.xlsx' is cleaned as 'cleaned_bollywoodlist.xlsx' by running first 9 lines of code in 'IMDB_text_analysis.ipynb'.
+
 'cleaned_bollywoodlist.xlsx' file must be downloaded and added to the local repository to perform web scraping using selenium.
+
 After performing web scraping all the output files uploaded manually to the google drive to perform further text analysis and exploratory data analysis on google collab.
 
 
